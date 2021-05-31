@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Hit the demon game</title>
+</head>
+<body>
+    <div class="overlay">
+        <div class="overlay-contents">
+            <p>Time Up!</p>
+            <p>Score: <span class="finalScore"></span></p>
+            <div class="startOverBtnContainer"><button class="startOver" onclick="reset()">Start Again</button></div>
+        </div>
+    </div>
+
+    <!-- Audio -->
+    <audio id="hitsound" src="sounds/hitsound.mp3"></audio>
+    <audio id="finishsound" src="sounds/finishsound.mp3"></audio>
+    <audio id="bksound" src="sounds/bksound.mp3"></audio>
+
+    <h1>Hit The Evil!</h1>
+
+    <form id="difficulty-form">
+        <input name="difficulty" type="radio" value="4" onchange="selectDifficulty()" checked><label for="radio1">Easy</label>
+        <input name="difficulty" type="radio" value="6" onchange="selectDifficulty()"><label for="radio2"> Normal</label>
+        <input name="difficulty" type="radio" value="8" onchange="selectDifficulty()"><label for="radio3"> Hard</label>
+        <input name="difficulty" type="radio" value="12" onchange="selectDifficulty()"> <label for="radio4">Brutal</label>
+        <input name="difficulty" type="radio" value="16" onchange="selectDifficulty()"> <label for="radio5">Nightmare</label>
+    </form>
+
+        <div class="texts">
+            <p>Time Left: <span class="counter">30</span></p>
+            <p>Score: <span class="score">0</span></p>  
+        </div>
+    
+    <div class="btns">
+        <button onclick='startGame()' class="btn">Start</button>
+        <button onclick='reset()'>Reset</button>
+        <button onclick='stopDemons()'>Stop</button>
+    </div>
+       
+    <div class="container"><!-- Demons comes here dinamically --></div> 
+ 
+</body>
+<script src="script.js"></script>
+</html>
